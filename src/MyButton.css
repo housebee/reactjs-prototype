@@ -16,9 +16,3 @@ button:hover {
 button:focus {
   outline: 0;
 }
-
-.button-container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
