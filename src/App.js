@@ -1,23 +1,35 @@
 import React, { useState } from "react";
-import MyButton from './MyButton';
+import MyButton from "./MyButton";
+import MyDisplay from "./MyDisplay";
 import "./style.css";
 
 export default function App() {
+  const TEMP_HOT = "hot";
+  const TEMP_COLD = "cold";
   const [temperatureValue, setTemperatureValue] = useState(10);
+  const [temperatureColor, setTemperatureColor] = useState(TEMP_COLD);
 
   const increaseTemperature = () => {
-    setTemperatureValue(temperatureValue + 1);
+    const newTemperature = temperatureValue + 1;
+    setTemperatureValue(newTemperature);
+
+    if (newTemperature >= 15) {
+      setTemperatureColor(TEMP_HOT);
+    }
   };
 
   const decreaseTemperature = () => {
-    setTemperatureValue(temperatureValue - 1);
+    const newTemperature = temperatureValue - 1;
+    setTemperatureValue(newTemperature);
+
+    if (temperatureValue < 16) {
+      setTemperatureColor(TEMP_COLD);
+    }
   };
 
   return (
     <div class="app-container">
-      <div class="temperature-display-container">
-        <div class="temperature-display">{temperatureValue}°C</div>
-      </div>
+      <MyDisplay value={temperatureValue} color={temperatureColor} />
       <div class="button-container">
         <MyButton clickHandler={increaseTemperature} label="+" />
         <MyButton clickHandler={decreaseTemperature} label="-" />
@@ -25,5 +37,3 @@ export default function App() {
     </div>
   );
 }
-
-
