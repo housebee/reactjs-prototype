@@ -6,8 +6,8 @@ import "./style.css";
 export default function App() {
   const TEMP_HOT = "hot";
   const TEMP_COLD = "cold";
-  const TEMP_BAR = 12;
-  const [temperatureValue, setTemperatureValue] = useState(10);
+  const TEMP_BAR = 16;
+  const [temperatureValue, setTemperatureValue] = useState(15);
   const [temperatureColor, setTemperatureColor] = useState(TEMP_COLD);
 
   const increaseTemperature = () => {
