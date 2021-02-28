@@ -6,6 +6,7 @@ import "./style.css";
 export default function App() {
   const TEMP_HOT = "hot";
   const TEMP_COLD = "cold";
+  const TEMP_BAR = 12;
   const [temperatureValue, setTemperatureValue] = useState(10);
   const [temperatureColor, setTemperatureColor] = useState(TEMP_COLD);
 
@@ -13,7 +14,7 @@ export default function App() {
     const newTemperature = temperatureValue + 1;
     setTemperatureValue(newTemperature);
 
-    if (newTemperature >= 15) {
+    if (newTemperature >= TEMP_BAR) {
       setTemperatureColor(TEMP_HOT);
     }
   };
@@ -22,7 +23,7 @@ export default function App() {
     const newTemperature = temperatureValue - 1;
     setTemperatureValue(newTemperature);
 
-    if (temperatureValue < 16) {
+    if (newTemperature < TEMP_BAR) {
       setTemperatureColor(TEMP_COLD);
     }
   };

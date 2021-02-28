@@ -1,4 +1,5 @@
 import React from "react";
+import "./MyDisplay.css";
 
 class MyDisplay extends React.Component {
   constructor(props) {

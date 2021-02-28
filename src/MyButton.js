@@ -1,14 +1,15 @@
-import React from 'react';
+import React from "react";
+import "./MyButton.css";
 
 class MyButton extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
   }
 
-  render () {
+  render() {
     return (
       <button onClick={this.props.clickHandler}>{this.props.label}</button>
-    )
+    );
   }
 }
 
